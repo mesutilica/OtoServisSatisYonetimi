@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34E788A0-1AEF-4EDF-B5FB-FB6B21EDEDCB}</ProjectGuid>
+    <ProjectGuid>{9B54B9A9-AE89-4E20-91CD-12E9FA6CA15B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OtoServisSatis.DAL</RootNamespace>
-    <AssemblyName>OtoServisSatis.DAL</AssemblyName>
+    <RootNamespace>OtoServisSatis.BL</RootNamespace>
+    <AssemblyName>OtoServisSatis.BL</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,28 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Migrations\202106271023205_dbkurulus.cs" />
-    <Compile Include="Migrations\202106271023205_dbkurulus.designer.cs">
-      <DependentUpon>202106271023205_dbkurulus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MarkaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\OtoServisSatis.DAL\OtoServisSatis.DAL.csproj">
+      <Project>{34e788a0-1aef-4edf-b5fb-fb6b21ededcb}</Project>
+      <Name>OtoServisSatis.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OtoServisSatis.Entities\OtoServisSatis.Entities.csproj">
-      <Project>{97F3D310-C35D-4EA1-8F60-3939FDB68F59}</Project>
+      <Project>{97f3d310-c35d-4ea1-8f60-3939fdb68f59}</Project>
       <Name>OtoServisSatis.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106271023205_dbkurulus.resx">
-      <DependentUpon>202106271023205_dbkurulus.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

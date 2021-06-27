@@ -56,14 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MarkaYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MarkaYonetimi.Designer.cs">
+      <DependentUpon>MarkaYonetimi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MarkaYonetimi.resx">
+      <DependentUpon>MarkaYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,6 +91,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OtoServisSatis.BL\OtoServisSatis.BL.csproj">
+      <Project>{9b54b9a9-ae89-4e20-91cd-12e9fa6ca15b}</Project>
+      <Name>OtoServisSatis.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OtoServisSatis.Entities\OtoServisSatis.Entities.csproj">
       <Project>{97f3d310-c35d-4ea1-8f60-3939fdb68f59}</Project>
       <Name>OtoServisSatis.Entities</Name>
