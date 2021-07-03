@@ -23,9 +23,22 @@ namespace OtoServisSatis.WindowsApp
         {
             dgvMarkalar.DataSource = manager.GetAll();
         }
+        void Temizle() //Sağ click > Outlining > Collapse to definition
+        {
+            lblId.Text = "0";
+            txtMarkaAdi.Text = string.Empty;
+        }
         private void dgvMarkalar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                lblId.Text = dgvMarkalar.CurrentRow.Cells[0].Value.ToString();
+                txtMarkaAdi.Text = dgvMarkalar.CurrentRow.Cells[1].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata Oluştu!");
+            }
         }
 
         private void MarkaYonetimi_Load(object sender, EventArgs e)
@@ -46,12 +59,64 @@ namespace OtoServisSatis.WindowsApp
                 if (islemSonucu > 0)
                 {
                     Yukle();
+                    Temizle();
                     MessageBox.Show("Marka Eklendi!");
                 }
             }
             catch (Exception hata)
             {
                 MessageBox.Show("Hata Oluştu! Kayıt Eklenemedi!");
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblId.Text != "0")
+                {
+                    int islemSonucu = manager.Update(
+                    new Marka
+                    {
+                        Id = int.Parse(lblId.Text),
+                        Adi = txtMarkaAdi.Text
+                    }
+                    );
+                    if (islemSonucu > 0)
+                    {
+                        Yukle();
+                        Temizle();
+                        MessageBox.Show("Marka Güncellendi!");
+                    }
+                }
+                else MessageBox.Show("Listeden güncellemek istediğiniz kaydı seçiniz!");
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Hata Oluştu! Kayıt Güncellenemedi!");
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblId.Text != "0")
+                {
+                    var marka = manager.Get(int.Parse(lblId.Text));
+                    int islemSonucu = manager.Delete(marka);
+                    if (islemSonucu > 0)
+                    {
+                        Yukle();
+                        Temizle();
+                        MessageBox.Show("Marka Silindi!");
+                    }
+                }
+                else MessageBox.Show("Listeden silmek istediğiniz kaydı seçiniz!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata Oluştu! Kayıt Silinemedi!");
             }
         }
     }

@@ -31,12 +31,12 @@ namespace OtoServisSatis.WindowsApp
         {
             this.dgvMarkalar = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtMarkaAdi = new System.Windows.Forms.TextBox();
-            this.btnEkle = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.txtMarkaAdi = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarkalar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,30 +66,25 @@ namespace OtoServisSatis.WindowsApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marka Bilgileri";
             // 
-            // label1
+            // btnSil
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Marka Adı";
+            this.btnSil.Location = new System.Drawing.Point(176, 86);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 5;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // lblId
+            // btnGuncelle
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(233, 50);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(13, 13);
-            this.lblId.TabIndex = 1;
-            this.lblId.Text = "0";
-            // 
-            // txtMarkaAdi
-            // 
-            this.txtMarkaAdi.Location = new System.Drawing.Point(110, 47);
-            this.txtMarkaAdi.Name = "txtMarkaAdi";
-            this.txtMarkaAdi.Size = new System.Drawing.Size(100, 20);
-            this.txtMarkaAdi.TabIndex = 2;
+            this.btnGuncelle.Location = new System.Drawing.Point(95, 86);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.TabIndex = 4;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -101,23 +96,30 @@ namespace OtoServisSatis.WindowsApp
             this.btnEkle.UseVisualStyleBackColor = true;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
-            // btnGuncelle
+            // txtMarkaAdi
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(95, 86);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
-            this.btnGuncelle.TabIndex = 4;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.txtMarkaAdi.Location = new System.Drawing.Point(110, 47);
+            this.txtMarkaAdi.Name = "txtMarkaAdi";
+            this.txtMarkaAdi.Size = new System.Drawing.Size(100, 20);
+            this.txtMarkaAdi.TabIndex = 2;
             // 
-            // btnSil
+            // lblId
             // 
-            this.btnSil.Location = new System.Drawing.Point(176, 86);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
-            this.btnSil.TabIndex = 5;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(233, 50);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(13, 13);
+            this.lblId.TabIndex = 1;
+            this.lblId.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Marka Adı";
             // 
             // MarkaYonetimi
             // 
