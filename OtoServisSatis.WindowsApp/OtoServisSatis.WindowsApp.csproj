@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KullaniciYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciYonetimi.Designer.cs">
+      <DependentUpon>KullaniciYonetimi.cs</DependentUpon>
+    </Compile>
     <Compile Include="MarkaYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KullaniciYonetimi.resx">
+      <DependentUpon>KullaniciYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MarkaYonetimi.resx">
       <DependentUpon>MarkaYonetimi.cs</DependentUpon>
     </EmbeddedResource>
