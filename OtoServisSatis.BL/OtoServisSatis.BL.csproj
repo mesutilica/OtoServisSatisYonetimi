@@ -51,12 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AracManager.cs" />
     <Compile Include="KullaniciManager.cs" />
     <Compile Include="MarkaManager.cs" />
+    <Compile Include="MusteriManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="RoleManager.cs" />
+    <Compile Include="SatisManager.cs" />
+    <Compile Include="ServisManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OtoServisSatis.DAL\OtoServisSatis.DAL.csproj">

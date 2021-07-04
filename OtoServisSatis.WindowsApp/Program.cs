@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OtoServisSatis.WindowsApp
@@ -16,7 +13,7 @@ namespace OtoServisSatis.WindowsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KullaniciYonetimi());
+            Application.Run(new MusteriYonetimi());
         }
     }
 }

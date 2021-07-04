@@ -146,5 +146,31 @@ namespace OtoServisSatis.WindowsApp
                 MessageBox.Show("Hata Oluştu!");
             }
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblId.Text == "0")
+                {
+                    MessageBox.Show("Listeden silinecek kaydı seçiniz!");
+                }
+                else
+                {
+                    int kulId = Convert.ToInt32(lblId.Text);
+                    var sonuc = manager.Delete(kulId);
+                    if (sonuc > 0)
+                    {
+                        Yukle();
+                        Temizle();
+                        MessageBox.Show("Kayıt Silindi!");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata Oluştu! Kayıt Silinemedi!");
+            }
+        }
     }
 }
