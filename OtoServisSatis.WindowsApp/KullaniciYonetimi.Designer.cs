@@ -31,6 +31,9 @@ namespace OtoServisSatis.WindowsApp
         {
             this.dgvKullanicilar = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
             this.lblEklenmeTarihi = new System.Windows.Forms.Label();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtSifre = new System.Windows.Forms.TextBox();
@@ -49,9 +52,6 @@ namespace OtoServisSatis.WindowsApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.btnEkle = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKullanicilar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,11 +59,13 @@ namespace OtoServisSatis.WindowsApp
             // dgvKullanicilar
             // 
             this.dgvKullanicilar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvKullanicilar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvKullanicilar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKullanicilar.Location = new System.Drawing.Point(0, 0);
             this.dgvKullanicilar.Name = "dgvKullanicilar";
             this.dgvKullanicilar.Size = new System.Drawing.Size(799, 283);
             this.dgvKullanicilar.TabIndex = 0;
+            this.dgvKullanicilar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKullanicilar_CellClick);
             // 
             // groupBox1
             // 
@@ -90,10 +92,39 @@ namespace OtoServisSatis.WindowsApp
             this.groupBox1.Controls.Add(this.lblId);
             this.groupBox1.Location = new System.Drawing.Point(12, 292);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(633, 146);
+            this.groupBox1.Size = new System.Drawing.Size(674, 146);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcı Bilgileri";
+            // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(381, 117);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 19;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(300, 117);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.TabIndex = 18;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.Location = new System.Drawing.Point(219, 117);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 17;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblEklenmeTarihi
             // 
@@ -148,7 +179,7 @@ namespace OtoServisSatis.WindowsApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(503, 29);
+            this.label8.Location = new System.Drawing.Point(509, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 10;
@@ -245,34 +276,6 @@ namespace OtoServisSatis.WindowsApp
             this.lblId.Size = new System.Drawing.Size(13, 13);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "0";
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.Location = new System.Drawing.Point(219, 117);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(75, 23);
-            this.btnEkle.TabIndex = 17;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.UseVisualStyleBackColor = true;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Location = new System.Drawing.Point(300, 117);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
-            this.btnGuncelle.TabIndex = 18;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            // 
-            // btnSil
-            // 
-            this.btnSil.Location = new System.Drawing.Point(381, 117);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
-            this.btnSil.TabIndex = 19;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
             // 
             // KullaniciYonetimi
             // 

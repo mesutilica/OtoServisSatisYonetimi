@@ -5,5 +5,6 @@ namespace OtoServisSatis.BL
 {
     public class KullaniciManager : Repository<Kullanici>
     {
+        
     }
 }

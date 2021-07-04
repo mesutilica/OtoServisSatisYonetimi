@@ -53,7 +53,10 @@ namespace OtoServisSatis.BL.Repositories
         {
             return dbSet.Where(expression).ToList();
         }
-
+        public IQueryable<T> GetAllByInclude(string table)
+        {
+            return dbSet.Include(table);
+        }
         public int Update(T entity)
         {
             dbSet.AddOrUpdate(entity);
