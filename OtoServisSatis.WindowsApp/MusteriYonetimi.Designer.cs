@@ -31,6 +31,8 @@ namespace OtoServisSatis.WindowsApp
         {
             this.dgvMusteriler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNotlar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -50,8 +52,6 @@ namespace OtoServisSatis.WindowsApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusteriler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +63,11 @@ namespace OtoServisSatis.WindowsApp
             this.dgvMusteriler.Name = "dgvMusteriler";
             this.dgvMusteriler.Size = new System.Drawing.Size(799, 251);
             this.dgvMusteriler.TabIndex = 0;
+            this.dgvMusteriler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMusteriler_CellClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNotlar);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
@@ -94,6 +95,23 @@ namespace OtoServisSatis.WindowsApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Bilgileri";
             // 
+            // txtNotlar
+            // 
+            this.txtNotlar.Location = new System.Drawing.Point(515, 56);
+            this.txtNotlar.Multiline = true;
+            this.txtNotlar.Name = "txtNotlar";
+            this.txtNotlar.Size = new System.Drawing.Size(121, 41);
+            this.txtNotlar.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(444, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Notlar";
+            // 
             // btnSil
             // 
             this.btnSil.Location = new System.Drawing.Point(381, 117);
@@ -102,6 +120,7 @@ namespace OtoServisSatis.WindowsApp
             this.btnSil.TabIndex = 19;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -111,6 +130,7 @@ namespace OtoServisSatis.WindowsApp
             this.btnGuncelle.TabIndex = 18;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -120,6 +140,7 @@ namespace OtoServisSatis.WindowsApp
             this.btnEkle.TabIndex = 17;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblEklenmeTarihi
             // 
@@ -254,23 +275,6 @@ namespace OtoServisSatis.WindowsApp
             this.lblId.TabIndex = 0;
             this.lblId.Text = "0";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(444, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Notlar";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(515, 56);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 41);
-            this.textBox1.TabIndex = 21;
-            // 
             // MusteriYonetimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +316,7 @@ namespace OtoServisSatis.WindowsApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNotlar;
         private System.Windows.Forms.Label label7;
     }
 }

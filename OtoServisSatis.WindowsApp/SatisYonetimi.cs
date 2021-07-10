@@ -1,25 +1,29 @@
-﻿using OtoServisSatis.BL;
+﻿using System;
+using OtoServisSatis.BL;
 using OtoServisSatis.Entities;
-using System;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace OtoServisSatis.WindowsApp
 {
-    public partial class MusteriYonetimi : Form
+    public partial class SatisYonetimi : Form
     {
-        public MusteriYonetimi()
+        public SatisYonetimi()
         {
             InitializeComponent();
         }
-        MusteriManager manager = new MusteriManager();
+        SatisManager manager = new SatisManager();
         AracManager aracManager = new AracManager();
+        MusteriManager musteriManager = new MusteriManager();
         void Yukle()
         {
-            dgvMusteriler.DataSource = manager.GetAll();
-            cbAracId.DataSource = aracManager.GetAll();
-            cbAracId.DisplayMember = "Modeli";
-            cbAracId.ValueMember = "Id";
+            dgvSatislar.DataSource = manager.GetAll();
+            cbArac.DataSource = aracManager.GetAll();
+            cbArac.DisplayMember = "Modeli";
+            cbArac.ValueMember = "Id";
+            cbMusteri.DataSource = musteriManager.GetAll();
+            cbMusteri.DisplayMember = "Adi";
+            cbMusteri.ValueMember = "Id";
         }
         void Temizle()
         {
@@ -30,7 +34,7 @@ namespace OtoServisSatis.WindowsApp
             }
             lblId.Text = "0";
         }
-        private void MusteriYonetimi_Load(object sender, EventArgs e)
+        private void SatisYonetimi_Load(object sender, EventArgs e)
         {
             Yukle();
         }
@@ -39,17 +43,14 @@ namespace OtoServisSatis.WindowsApp
         {
             try
             {
-                var sonuc = manager.Add(new Musteri
-                {
-                    Adi = txtAdi.Text,
-                    Adres = txtAdres.Text,
-                    AracId = Convert.ToInt32(cbAracId.SelectedValue),
-                    Email = txtEmail.Text,
-                    Notlar = txtNotlar.Text,
-                    Soyadi = txtSoyadi.Text,
-                    TcNo = txtTcNo.Text,
-                    Telefon = txtTelefon.Text
-                });
+                var sonuc = manager.Add(
+                    new Satis
+                    {
+                        AracId = Convert.ToInt32(cbArac.SelectedValue),
+                        MusteriId = Convert.ToInt32(cbMusteri.SelectedValue),
+                        SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
+                        SatisTarihi = dtpSatisTarihi.Value
+                    });
                 if (sonuc > 0)
                 {
                     Temizle();
@@ -63,27 +64,23 @@ namespace OtoServisSatis.WindowsApp
             }
         }
 
-        private void dgvMusteriler_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSatislar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                var musteri = manager.Find(Convert.ToInt32(dgvMusteriler.CurrentRow.Cells[0].Value));
-                if (musteri != null)
+                var satis = manager.Find(Convert.ToInt32(dgvSatislar.CurrentRow.Cells[0].Value));
+                if (satis != null)
                 {
-                    txtAdi.Text = musteri.Adi;
-                    txtAdres.Text = musteri.Adres;
-                    txtEmail.Text = musteri.Email;
-                    txtNotlar.Text = musteri.Notlar;
-                    txtSoyadi.Text = musteri.Soyadi;
-                    txtTcNo.Text = musteri.TcNo;
-                    txtTelefon.Text = musteri.Telefon;
-                    cbAracId.SelectedValue = musteri.AracId;
-                    lblId.Text = musteri.Id.ToString();
+                    cbArac.SelectedValue = satis.AracId;
+                    cbMusteri.SelectedValue = satis.MusteriId;
+                    txtSatisFiyati.Text = satis.SatisFiyati.ToString();
+                    dtpSatisTarihi.Value = satis.SatisTarihi;
+                    lblId.Text = satis.Id.ToString();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Hata Oluştu! Bilgiler Yüklenemedi!");
+                MessageBox.Show("Hata Oluştu! Kayıt Yüklenemedi!");
             }
         }
 
@@ -93,17 +90,14 @@ namespace OtoServisSatis.WindowsApp
             {
                 if (lblId.Text != "0")
                 {
-                    var sonuc = manager.Update(new Musteri
+                    var sonuc = manager.Update(
+                    new Satis
                     {
-                        Id = Convert.ToInt32(dgvMusteriler.CurrentRow.Cells[0].Value),
-                        Adi = txtAdi.Text,
-                        Adres = txtAdres.Text,
-                        AracId = Convert.ToInt32(cbAracId.SelectedValue),
-                        Email = txtEmail.Text,
-                        Notlar = txtNotlar.Text,
-                        Soyadi = txtSoyadi.Text,
-                        TcNo = txtTcNo.Text,
-                        Telefon = txtTelefon.Text
+                        Id = Convert.ToInt32(dgvSatislar.CurrentRow.Cells[0].Value),
+                        AracId = Convert.ToInt32(cbArac.SelectedValue),
+                        MusteriId = Convert.ToInt32(cbMusteri.SelectedValue),
+                        SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
+                        SatisTarihi = dtpSatisTarihi.Value
                     });
                     if (sonuc > 0)
                     {
@@ -116,7 +110,7 @@ namespace OtoServisSatis.WindowsApp
             }
             catch (Exception)
             {
-                MessageBox.Show("Hata Oluştu! Kayıt Güncellenemedi!");
+                MessageBox.Show("Hata Oluştu! Kayıt Güncellenemdi!");
             }
         }
 
