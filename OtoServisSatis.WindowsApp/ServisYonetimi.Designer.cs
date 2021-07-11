@@ -31,6 +31,23 @@ namespace OtoServisSatis.WindowsApp
         {
             this.dgvServisler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSaseNo = new System.Windows.Forms.TextBox();
+            this.txtKasaTipi = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtMarka = new System.Windows.Forms.TextBox();
+            this.txtAracPlaka = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbGaranti = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpServistenCikisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.txtNotlar = new System.Windows.Forms.TextBox();
+            this.txtYapilanIslemler = new System.Windows.Forms.TextBox();
+            this.txtAracSorunu = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -41,23 +58,6 @@ namespace OtoServisSatis.WindowsApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.txtAracSorunu = new System.Windows.Forms.TextBox();
-            this.dtpServistenCikisTarihi = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtYapilanIslemler = new System.Windows.Forms.TextBox();
-            this.cbGaranti = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAracPlaka = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMarka = new System.Windows.Forms.TextBox();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtKasaTipi = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtSaseNo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNotlar = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServisler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +108,145 @@ namespace OtoServisSatis.WindowsApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Satış Bilgileri";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(622, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Şase No";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(624, 59);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Kasa Tipi";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(624, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Model";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(315, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Marka";
+            // 
+            // txtSaseNo
+            // 
+            this.txtSaseNo.Location = new System.Drawing.Point(710, 78);
+            this.txtSaseNo.Name = "txtSaseNo";
+            this.txtSaseNo.Size = new System.Drawing.Size(133, 20);
+            this.txtSaseNo.TabIndex = 18;
+            // 
+            // txtKasaTipi
+            // 
+            this.txtKasaTipi.Location = new System.Drawing.Point(710, 52);
+            this.txtKasaTipi.Name = "txtKasaTipi";
+            this.txtKasaTipi.Size = new System.Drawing.Size(133, 20);
+            this.txtKasaTipi.TabIndex = 18;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(710, 27);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(133, 20);
+            this.txtModel.TabIndex = 18;
+            // 
+            // txtMarka
+            // 
+            this.txtMarka.Location = new System.Drawing.Point(401, 127);
+            this.txtMarka.Name = "txtMarka";
+            this.txtMarka.Size = new System.Drawing.Size(200, 20);
+            this.txtMarka.TabIndex = 18;
+            // 
+            // txtAracPlaka
+            // 
+            this.txtAracPlaka.Location = new System.Drawing.Point(401, 101);
+            this.txtAracPlaka.Name = "txtAracPlaka";
+            this.txtAracPlaka.Size = new System.Drawing.Size(200, 20);
+            this.txtAracPlaka.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(315, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Araç Plaka";
+            // 
+            // cbGaranti
+            // 
+            this.cbGaranti.AutoSize = true;
+            this.cbGaranti.Location = new System.Drawing.Point(401, 30);
+            this.cbGaranti.Name = "cbGaranti";
+            this.cbGaranti.Size = new System.Drawing.Size(141, 17);
+            this.cbGaranti.TabIndex = 16;
+            this.cbGaranti.Text = "Garanti Kapsamında Mı?";
+            this.cbGaranti.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(624, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Notlar";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(315, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Yapılan İşlemler";
+            // 
+            // dtpServistenCikisTarihi
+            // 
+            this.dtpServistenCikisTarihi.Location = new System.Drawing.Point(94, 127);
+            this.dtpServistenCikisTarihi.Name = "dtpServistenCikisTarihi";
+            this.dtpServistenCikisTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpServistenCikisTarihi.TabIndex = 14;
+            // 
+            // txtNotlar
+            // 
+            this.txtNotlar.Location = new System.Drawing.Point(710, 107);
+            this.txtNotlar.Multiline = true;
+            this.txtNotlar.Name = "txtNotlar";
+            this.txtNotlar.Size = new System.Drawing.Size(133, 74);
+            this.txtNotlar.TabIndex = 13;
+            // 
+            // txtYapilanIslemler
+            // 
+            this.txtYapilanIslemler.Location = new System.Drawing.Point(401, 56);
+            this.txtYapilanIslemler.Multiline = true;
+            this.txtYapilanIslemler.Name = "txtYapilanIslemler";
+            this.txtYapilanIslemler.Size = new System.Drawing.Size(200, 39);
+            this.txtYapilanIslemler.TabIndex = 13;
+            // 
+            // txtAracSorunu
+            // 
+            this.txtAracSorunu.Location = new System.Drawing.Point(94, 56);
+            this.txtAracSorunu.Multiline = true;
+            this.txtAracSorunu.Name = "txtAracSorunu";
+            this.txtAracSorunu.Size = new System.Drawing.Size(200, 39);
+            this.txtAracSorunu.TabIndex = 13;
+            // 
             // btnSil
             // 
             this.btnSil.Location = new System.Drawing.Point(526, 163);
@@ -116,6 +255,7 @@ namespace OtoServisSatis.WindowsApp
             this.btnSil.TabIndex = 12;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -195,145 +335,6 @@ namespace OtoServisSatis.WindowsApp
             this.lblId.Size = new System.Drawing.Size(13, 13);
             this.lblId.TabIndex = 1;
             this.lblId.Text = "0";
-            // 
-            // txtAracSorunu
-            // 
-            this.txtAracSorunu.Location = new System.Drawing.Point(94, 56);
-            this.txtAracSorunu.Multiline = true;
-            this.txtAracSorunu.Name = "txtAracSorunu";
-            this.txtAracSorunu.Size = new System.Drawing.Size(200, 39);
-            this.txtAracSorunu.TabIndex = 13;
-            // 
-            // dtpServistenCikisTarihi
-            // 
-            this.dtpServistenCikisTarihi.Location = new System.Drawing.Point(94, 127);
-            this.dtpServistenCikisTarihi.Name = "dtpServistenCikisTarihi";
-            this.dtpServistenCikisTarihi.Size = new System.Drawing.Size(200, 20);
-            this.dtpServistenCikisTarihi.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(315, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Yapılan İşlemler";
-            // 
-            // txtYapilanIslemler
-            // 
-            this.txtYapilanIslemler.Location = new System.Drawing.Point(401, 56);
-            this.txtYapilanIslemler.Multiline = true;
-            this.txtYapilanIslemler.Name = "txtYapilanIslemler";
-            this.txtYapilanIslemler.Size = new System.Drawing.Size(200, 39);
-            this.txtYapilanIslemler.TabIndex = 13;
-            // 
-            // cbGaranti
-            // 
-            this.cbGaranti.AutoSize = true;
-            this.cbGaranti.Location = new System.Drawing.Point(401, 30);
-            this.cbGaranti.Name = "cbGaranti";
-            this.cbGaranti.Size = new System.Drawing.Size(141, 17);
-            this.cbGaranti.TabIndex = 16;
-            this.cbGaranti.Text = "Garanti Kapsamında Mı?";
-            this.cbGaranti.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(315, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Araç Plaka";
-            // 
-            // txtAracPlaka
-            // 
-            this.txtAracPlaka.Location = new System.Drawing.Point(401, 101);
-            this.txtAracPlaka.Name = "txtAracPlaka";
-            this.txtAracPlaka.Size = new System.Drawing.Size(200, 20);
-            this.txtAracPlaka.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(315, 134);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Marka";
-            // 
-            // txtMarka
-            // 
-            this.txtMarka.Location = new System.Drawing.Point(401, 127);
-            this.txtMarka.Name = "txtMarka";
-            this.txtMarka.Size = new System.Drawing.Size(200, 20);
-            this.txtMarka.TabIndex = 18;
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(710, 27);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(133, 20);
-            this.txtModel.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(624, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Model";
-            // 
-            // txtKasaTipi
-            // 
-            this.txtKasaTipi.Location = new System.Drawing.Point(710, 52);
-            this.txtKasaTipi.Name = "txtKasaTipi";
-            this.txtKasaTipi.Size = new System.Drawing.Size(133, 20);
-            this.txtKasaTipi.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(624, 59);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Kasa Tipi";
-            // 
-            // txtSaseNo
-            // 
-            this.txtSaseNo.Location = new System.Drawing.Point(710, 78);
-            this.txtSaseNo.Name = "txtSaseNo";
-            this.txtSaseNo.Size = new System.Drawing.Size(133, 20);
-            this.txtSaseNo.TabIndex = 18;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(622, 81);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Şase No";
-            // 
-            // txtNotlar
-            // 
-            this.txtNotlar.Location = new System.Drawing.Point(710, 107);
-            this.txtNotlar.Multiline = true;
-            this.txtNotlar.Name = "txtNotlar";
-            this.txtNotlar.Size = new System.Drawing.Size(133, 74);
-            this.txtNotlar.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(624, 110);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Notlar";
             // 
             // ServisYonetimi
             // 

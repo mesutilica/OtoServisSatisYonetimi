@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaMenu.Designer.cs">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="AracYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="KullaniciYonetimi.Designer.cs">
       <DependentUpon>KullaniciYonetimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MarkaYonetimi.cs">
       <SubType>Form</SubType>
@@ -100,11 +112,17 @@
     <Compile Include="ServisYonetimi.Designer.cs">
       <DependentUpon>ServisYonetimi.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnaMenu.resx">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AracYonetimi.resx">
       <DependentUpon>AracYonetimi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KullaniciYonetimi.resx">
       <DependentUpon>KullaniciYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MarkaYonetimi.resx">
       <DependentUpon>MarkaYonetimi.cs</DependentUpon>

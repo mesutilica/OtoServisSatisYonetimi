@@ -97,9 +97,7 @@ namespace OtoServisSatis.WindowsApp
             {
                 if (lblId.Text != "0")
                 {
-
-                }
-                var sonuc = manager.Update(
+                    var sonuc = manager.Update(
                     new Servis
                     {
                         Id = Convert.ToInt32(dgvServisler.CurrentRow.Cells[0].Value),
@@ -116,18 +114,41 @@ namespace OtoServisSatis.WindowsApp
                         ServisUcreti = Convert.ToDecimal(txtServisUcreti.Text),
                         YapilanIslemler = txtYapilanIslemler.Text
                     });
-                if (sonuc > 0)
-                {
-                    Temizle();
-                    Yukle();
-                    MessageBox.Show("Kayıt Eklendi!");
+                    if (sonuc > 0)
+                    {
+                        Temizle();
+                        Yukle();
+                        MessageBox.Show("Kayıt Güncellendi!");
+                    }
                 }
+                else MessageBox.Show("Listeden güncellenecek kaydı seçiniz!");
             }
             catch (Exception)
             {
-                MessageBox.Show("Hata Oluştu! Kayıt Eklenemedi!");
+                MessageBox.Show("Hata Oluştu! Kayıt Güncellenemedi!");
             }
         }
 
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblId.Text != "0")
+                {
+                    var sonuc = manager.Delete(Convert.ToInt32(lblId.Text));
+                    if (sonuc > 0)
+                    {
+                        Temizle();
+                        Yukle();
+                        MessageBox.Show("Kayıt Silindi!");
+                    }
+                }
+                else MessageBox.Show("Listeden silinecek kaydı seçiniz!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata Oluştu! Kayıt Silinemedi!");
+            }
+        }
     }
 }
