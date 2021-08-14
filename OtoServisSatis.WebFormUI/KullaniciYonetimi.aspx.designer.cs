@@ -11,44 +11,62 @@ namespace OtoServisSatis.WebFormUI
 {
 
 
-    public partial class AracYonetimi
+    public partial class KullaniciYonetimi
     {
 
         /// <summary>
-        /// gvAraclar control.
+        /// dgvKullanicilar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAraclar;
+        protected global::System.Web.UI.WebControls.GridView dgvKullanicilar;
 
         /// <summary>
-        /// ddlMarkalar control.
+        /// txtAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMarkalar;
+        protected global::System.Web.UI.WebControls.TextBox txtAdi;
 
         /// <summary>
-        /// txtRenk control.
+        /// txtSoyadi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRenk;
+        protected global::System.Web.UI.WebControls.TextBox txtSoyadi;
 
         /// <summary>
-        /// txtFiyati control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFiyati;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// txtTelefon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelefon;
+
+        /// <summary>
+        /// txtKullaniciAdi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKullaniciAdi;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -60,31 +78,13 @@ namespace OtoServisSatis.WebFormUI
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// txtModeli control.
+        /// txtSifre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModeli;
-
-        /// <summary>
-        /// txtKasaTipi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKasaTipi;
-
-        /// <summary>
-        /// txtModelYili control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModelYili;
+        protected global::System.Web.UI.WebControls.TextBox txtSifre;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -96,22 +96,31 @@ namespace OtoServisSatis.WebFormUI
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// txtNotlar control.
+        /// cbAktif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNotlar;
+        protected global::System.Web.UI.WebControls.CheckBox cbAktif;
 
         /// <summary>
-        /// cbSatistaMi control.
+        /// cbKullaniciRolu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbSatistaMi;
+        protected global::System.Web.UI.WebControls.DropDownList cbKullaniciRolu;
+
+        /// <summary>
+        /// lblEklenmeTarihi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEklenmeTarihi;
 
         /// <summary>
         /// lblId control.

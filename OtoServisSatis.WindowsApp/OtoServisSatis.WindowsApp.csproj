@@ -177,7 +177,6 @@
     <EmbeddedResource Include="ServisYonetimi.resx">
       <DependentUpon>ServisYonetimi.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="OtoServisSatis.WindowsApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
