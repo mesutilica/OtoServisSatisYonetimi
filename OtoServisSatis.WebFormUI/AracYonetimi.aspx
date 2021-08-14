@@ -12,7 +12,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <asp:GridView ID="gvAraclar" runat="server">
+    <asp:GridView ID="gvAraclar" runat="server" OnSelectedIndexChanged="gvAraclar_SelectedIndexChanged">
+        <Columns>
+            <asp:CommandField ShowSelectButton="True" />
+        </Columns>
     </asp:GridView>
 
     <hr />

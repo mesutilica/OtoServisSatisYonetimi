@@ -40,5 +40,11 @@ namespace OtoServisSatis.WebFormUI
         {
 
         }
+
+        protected void gvAraclar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = gvAraclar.SelectedRow;
+            txtModeli.Text = row.Cells[1].Text;
+        }
     }
 }
