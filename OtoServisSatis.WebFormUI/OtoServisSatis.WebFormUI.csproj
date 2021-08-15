@@ -71,12 +71,25 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AnaMenu.aspx" />
     <Content Include="AracYonetimi.aspx" />
     <Content Include="Global.asax" />
     <Content Include="KullaniciYonetimi.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MarkaYonetimi.aspx" />
+    <Content Include="MusteriYonetimi.aspx" />
+    <Content Include="RolYonetimi.aspx" />
+    <Content Include="SatisYonetimi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnaMenu.aspx.cs">
+      <DependentUpon>AnaMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnaMenu.aspx.designer.cs">
+      <DependentUpon>AnaMenu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AracYonetimi.aspx.cs">
       <DependentUpon>AracYonetimi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,6 +107,27 @@
     <Compile Include="KullaniciYonetimi.aspx.designer.cs">
       <DependentUpon>KullaniciYonetimi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarkaYonetimi.aspx.cs">
+      <DependentUpon>MarkaYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarkaYonetimi.aspx.designer.cs">
+      <DependentUpon>MarkaYonetimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MusteriYonetimi.aspx.cs">
+      <DependentUpon>MusteriYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusteriYonetimi.aspx.designer.cs">
+      <DependentUpon>MusteriYonetimi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OtoServisSablon.Master.cs">
       <DependentUpon>OtoServisSablon.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +136,20 @@
       <DependentUpon>OtoServisSablon.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolYonetimi.aspx.cs">
+      <DependentUpon>RolYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RolYonetimi.aspx.designer.cs">
+      <DependentUpon>RolYonetimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SatisYonetimi.aspx.cs">
+      <DependentUpon>SatisYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SatisYonetimi.aspx.designer.cs">
+      <DependentUpon>SatisYonetimi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Araclar.cs" />
   </ItemGroup>
   <ItemGroup>
