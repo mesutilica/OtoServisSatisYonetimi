@@ -42,7 +42,7 @@ namespace OtoServisSatis.WebFormUI
                         AracId = Convert.ToInt32(cbArac.SelectedValue),
                         MusteriId = Convert.ToInt32(cbMusteri.SelectedValue),
                         SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
-                        SatisTarihi = dtpSatisTarihi.SelectedDate
+                        SatisTarihi = dtpSatisTarihi.SelectedDate + DateTime.Now.TimeOfDay
                     });
                 if (sonuc > 0)
                 {
@@ -68,7 +68,7 @@ namespace OtoServisSatis.WebFormUI
                         AracId = Convert.ToInt32(cbArac.SelectedValue),
                         MusteriId = Convert.ToInt32(cbMusteri.SelectedValue),
                         SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
-                        SatisTarihi = dtpSatisTarihi.SelectedDate
+                        SatisTarihi = dtpSatisTarihi.SelectedDate + DateTime.Now.TimeOfDay
                     });
                     if (sonuc > 0)
                     {

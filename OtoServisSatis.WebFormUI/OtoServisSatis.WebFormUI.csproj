@@ -77,9 +77,11 @@
     <Content Include="KullaniciYonetimi.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MarkaYonetimi.aspx" />
+    <Content Include="Menu.ascx" />
     <Content Include="MusteriYonetimi.aspx" />
     <Content Include="RolYonetimi.aspx" />
     <Content Include="SatisYonetimi.aspx" />
+    <Content Include="ServisYonetimi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +123,13 @@
     <Compile Include="MarkaYonetimi.aspx.designer.cs">
       <DependentUpon>MarkaYonetimi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MusteriYonetimi.aspx.cs">
       <DependentUpon>MusteriYonetimi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +158,13 @@
     </Compile>
     <Compile Include="SatisYonetimi.aspx.designer.cs">
       <DependentUpon>SatisYonetimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServisYonetimi.aspx.cs">
+      <DependentUpon>ServisYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServisYonetimi.aspx.designer.cs">
+      <DependentUpon>ServisYonetimi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tools\Araclar.cs" />
   </ItemGroup>

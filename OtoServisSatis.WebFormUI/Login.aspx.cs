@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace OtoServisSatis.WebFormUI
 {
@@ -22,6 +18,7 @@ namespace OtoServisSatis.WebFormUI
                 var kullanici = kullaniciManager.Get(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text && k.AktifMi == true);
                 if (kullanici != null)
                 {
+                    Session["admin"] = kullanici;
                     Response.Redirect("AnaMenu.aspx");
                 }
                 else
@@ -39,6 +36,5 @@ namespace OtoServisSatis.WebFormUI
         {
             ClientScript.RegisterStartupScript(Page.GetType(), "Uyarı", $"<script>alert('{mesaj}')</script>");
         }
-
     }
 }
