@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OtoServisSatis.Entities.Arac>
+
+@{
+    ViewBag.Title = "Araçlar";
+}
+
+<h2>Araçlar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Renk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modeli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KasaTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SatistaMi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notlar)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Renk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modeli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KasaTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SatistaMi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notlar)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
