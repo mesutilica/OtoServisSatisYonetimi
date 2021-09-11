@@ -101,7 +101,8 @@ namespace OtoServisSatis.WebFormUI
                         Response.Redirect("ServisYonetimi.aspx");
                     }
                 }
-                else MessageBox("Listeden silinecek kaydı seçiniz!");
+                //else MessageBox("Listeden silinecek kaydı seçiniz!"); 
+                else Tools.Araclar.MessageBox(this, "Listeden silinecek kaydı seçiniz!");
             }
             catch (Exception)
             {
@@ -140,7 +141,7 @@ namespace OtoServisSatis.WebFormUI
 
         void MessageBox(string mesaj = "")
         {
-            ClientScript.RegisterStartupScript(Page.GetType(), "Uyarı", $"<script>alert('{mesaj}')</script>");
+            ClientScript.RegisterStartupScript(Page.GetType(), "Uyarı", $"alert('{mesaj}')", true);
         }
     }
 }
