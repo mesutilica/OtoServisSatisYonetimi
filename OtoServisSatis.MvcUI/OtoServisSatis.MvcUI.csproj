@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,10 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -128,10 +127,17 @@
     <Compile Include="Areas\Admin\Controllers\AracYonetimiController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\KullaniciYonetimiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MarkaYonetimiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MusteriYonetimiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RollerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SatisYonetimiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +157,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\signin.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -172,6 +179,32 @@
     <Content Include="Areas\Admin\Views\KullaniciYonetimi\Create.cshtml" />
     <Content Include="Areas\Admin\Views\KullaniciYonetimi\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\KullaniciYonetimi\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MarkaYonetimi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MarkaYonetimi\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MarkaYonetimi\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MarkaYonetimi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MarkaYonetimi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MusteriYonetimi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MusteriYonetimi\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MusteriYonetimi\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MusteriYonetimi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MusteriYonetimi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Roller\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Roller\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Roller\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Roller\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Roller\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SatisYonetimi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SatisYonetimi\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SatisYonetimi\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SatisYonetimi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SatisYonetimi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Servis\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Servis\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Servis\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Servis\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Servis\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -201,7 +234,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -272,11 +304,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

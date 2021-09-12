@@ -8,25 +8,43 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <header class="p-3 bg-dark text-white">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Oto Servis Satış Yönetimi", "Index", "Home", new { area = "Admin" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/Admin/AracYonetimi">Araç Yönetimi</a>
-                    </li>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/Admin/" class="nav-link px-2 text-secondary">Giriş</a></li>
+                    <li><a href="/Admin/AracYonetimi" class="nav-link px-2 text-white">Araç Yönetimi</a></li>
+                    <li><a href="/Admin/KullaniciYonetimi" class="nav-link px-2 text-white">Kullanıcı Yönetimi</a></li>
+                    <li><a href="/Admin/MarkaYonetimi" class="nav-link px-2 text-white">Marka Yönetimi</a></li>
+                    <li><a href="/Admin/MusteriYonetimi" class="nav-link px-2 text-white">Müşteri Yönetimi</a></li>
+                    <li><a href="/Admin/Roller" class="nav-link px-2 text-white">Rol Yönetimi</a></li>
+                    <li><a href="/Admin/SatisYonetimi" class="nav-link px-2 text-white">Satış Yönetimi</a></li>
+                    <li><a href="/Admin/Servis" class="nav-link px-2 text-white">Servis Yönetimi</a></li>
                 </ul>
+
+                @*<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                    </form>*@
+                @{
+                    if (Session["admin"] != null)
+                    {
+                        <div class="text-end">                            
+                            <a href="/Admin/Login/Logout" class="btn btn-danger">Çıkış</a>
+                        </div>
+                    }
+                    else //eğer Session["admin"] boş ise kullanıcıyı login sayfasına yönlendir
+                    {
+                        Response.Redirect("/Admin/Login");
+                    }
+                }
+
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="container body-content">
         @RenderBody()
@@ -37,7 +55,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

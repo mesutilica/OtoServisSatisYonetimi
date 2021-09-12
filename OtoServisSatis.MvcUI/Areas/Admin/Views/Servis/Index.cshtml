@@ -1,0 +1,88 @@
+﻿@model IEnumerable<OtoServisSatis.Entities.Servis>
+
+@{
+    ViewBag.Title = "Servis Kayıtları";
+}
+
+<h2>Servis Kayıtları</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create", null, new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiseGelisTarihi)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ServisUcreti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServistenCikisTarihi)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.GarantiKapsamindaMi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KasaTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaseNo)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiseGelisTarihi)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ServisUcreti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServistenCikisTarihi)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.GarantiKapsamindaMi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AracPlaka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KasaTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaseNo)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" }) |
+
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

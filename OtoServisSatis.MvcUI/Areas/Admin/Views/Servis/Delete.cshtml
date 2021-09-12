@@ -1,0 +1,120 @@
+﻿@model OtoServisSatis.Entities.Servis
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Servis Bilgileri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiseGelisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiseGelisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracSorunu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracSorunu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisUcreti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisUcreti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServistenCikisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServistenCikisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YapilanIslemler)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YapilanIslemler)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarantiKapsamindaMi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarantiKapsamindaMi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracPlaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KasaTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KasaTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notlar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notlar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>

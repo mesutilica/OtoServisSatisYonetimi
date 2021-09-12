@@ -7,7 +7,7 @@
 <h2>Kullanıcılar</h2>
 
 <p>
-    @Html.ActionLink("Yeni Ekle", "Create")
+    @Html.ActionLink("Yeni Ekle", "Create", null, new { @class = "btn btn-info" })
 </p>
 <table class="table">
     <tr>
@@ -66,9 +66,9 @@
                 @Html.DisplayFor(modelItem => item.EklenmeTarihi)
             </td>
             <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" }) |
 
-                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
             </td>
         </tr>
     }

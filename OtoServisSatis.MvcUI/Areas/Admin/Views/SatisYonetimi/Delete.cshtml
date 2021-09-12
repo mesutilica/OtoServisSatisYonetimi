@@ -1,0 +1,56 @@
+﻿@model OtoServisSatis.Entities.Satis
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Emin misiniz?</h3>
+<div>
+    <h4>Satış</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Arac.Renk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arac.Renk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Musteri.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Musteri.Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisTarihi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>
